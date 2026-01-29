@@ -12,8 +12,8 @@ from worlds.AutoWorld import WebWorld, World
 class InfiniteCraftWebWorld(WebWorld):
     tutorials = [
         Tutorial(
-            "Multiworld Setup Guide",
-            "A guide to setting up Infinite Craft in the browser.",
+            "Infinite Craft Setup Guide",
+            "A guide to setting up the Archipelago implementation of Infinite Craft.",
             "English",
             "setup_en.md",
             "setup/en",
