@@ -1,6 +1,7 @@
 from worlds.AutoWorld import World
 
 from . import locations, regions, rules
+from . import options as infinitecraft_options
 
 
 class InfiniteCraftWorld(World):
@@ -13,6 +14,9 @@ class InfiniteCraftWorld(World):
     game = "Infinite Craft"
 
     # web = InfiniteCraftWebWorld()
+
+    options_dataclass = infinitecraft_options.InfiniteCraftOptions
+    options: infinitecraft_options.InfiniteCraftOptions
 
     location_name_to_id = locations.LOCATION_NAME_TO_ID
     item_name_to_id = {}
