@@ -1,6 +1,6 @@
 from worlds.AutoWorld import World
 
-from . import locations, regions, rules
+from . import items, locations, regions, rules
 from . import options as infinitecraft_options
 
 
@@ -19,7 +19,8 @@ class InfiniteCraftWorld(World):
     options: infinitecraft_options.InfiniteCraftOptions
 
     location_name_to_id = locations.LOCATION_NAME_TO_ID
-    item_name_to_id = {}
+    item_name_to_id = items.ITEM_NAME_TO_ID
+    item_name_groups = items.ITEM_NAME_GROUPS
 
     origin_region_name = "Crafting View"
 
