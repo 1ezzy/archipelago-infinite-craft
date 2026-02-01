@@ -8,7 +8,7 @@ from .items import (
     DEFAULT_ITEM_CLASSIFICATIONS,
     InfiniteCraftItem,
 )
-from .locations import LOCATION_NAME_TO_ID, InfiniteCraftLocation
+from .locations import LOCATION_NAME_TO_ID
 
 
 class InfiniteCraftWorld(World):
@@ -32,6 +32,7 @@ class InfiniteCraftWorld(World):
 
     origin_region_name = "Crafting View"
 
+    # required function to create an item
     def create_item(self, name: str) -> InfiniteCraftItem:
         return InfiniteCraftItem(
             name,
@@ -40,16 +41,21 @@ class InfiniteCraftWorld(World):
             self.player,
         )
 
+    # function to determine the total number of checks
+    # TODO: split this into two functions once items and categories are different
     def calculate_location_sum(self) -> int:
-        return self.options.items_per_category_check + (
+        return self.options.number_of_category_checks + (
             self.options.number_of_category_checks
             * self.options.items_per_category_check
         )
 
+    # required function to create regions and create locations for each region
+    # uses location calculation(s) from above for location creation
     def create_regions(self) -> None:
         regions.create_regions(self)
         locations.create_all_locations(self, self.calculate_location_sum())
 
+    # creates all items for the game
     def create_items(self) -> None:
         # add all crafting items from the itempool
         for item in map(self.create_item, self.item_name_groups["Crafting Items"]):
@@ -65,7 +71,8 @@ class InfiniteCraftWorld(World):
             self.create_item("Clear Canvas Trap") for _ in range(filler)
         ]
 
+    # set rules (just the completion goal for now)
     def set_rules(self) -> None:
         rules.set_completion_condition(self)
 
-    ap_world_version = "0.0.1"
+    ap_world_version = "0.0.2"

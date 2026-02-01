@@ -1,0 +1,42 @@
+{
+  "Craft 'wave'": {
+    "name": "wave",
+    "category": "default"
+  },
+  "Craft 'continent'": {
+    "name": "continent",
+    "category": "default"
+  },
+  "Craft 'steam'": {
+    "name": "steam",
+    "category": "default"
+  },
+  "Craft 'plant'": {
+    "name": "plant",
+    "category": "default"
+  },
+  "Craft 'ocean'": {
+    "name": "ocean",
+    "category": "default"
+  },
+  "Craft 'lava'": {
+    "name": "lava",
+    "category": "default"
+  },
+  "Craft 'sand'": {
+    "name": "sand",
+    "category": "default"
+  },
+  "Craft 'smoke'": {
+    "name": "smoke",
+    "category": "default"
+  },
+  "Craft 'inferno'": {
+    "name": "inferno",
+    "category": "default"
+  },
+  "Craft 'gale'": {
+    "name": "gale",
+    "category": "default"
+  }
+}
